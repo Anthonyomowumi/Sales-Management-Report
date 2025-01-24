@@ -24,41 +24,18 @@ Data Warehouse is mostly used for Analytics, it is an OLAP system. The dataset c
 
 Below are the SQL statements for cleansing and transforming necessary data.
 
--- Cleansed FACT InternetSales Table 
-SELECT ProductKey, OrderDateKey, DueDateKey, ShipDateKey, CustomerKey, SalesOrderNumber,
-TotalProductCost, SalesAmount
-FROM [AdventureWorksDW2019].[dbo].[FactInternetSales]
-WHERE 
-  LEFT (OrderDateKey, 4) >= YEAR(GETDATE()) -2 -- Ensures we always only bring two years of date from extraction.
-ORDER BY
-  OrderDateKey ASC;
+DIM_CUSTOMER
+<img width="800" alt="customer dim" src="https://github.com/user-attachments/assets/fdcdd024-6f8e-45c2-9931-1c1a7fa0a997" />
 
+DIM_CALENDAR
+<img width="844" alt="data dim" src="https://github.com/user-attachments/assets/8d4a967b-6636-4aa8-94bb-e21e9b11d297" />
 
-  -- Cleansed Dim_Product Table
-SELECT p.ProductKey, p.ProductAlternateKey AS ProductItemCode, p.EnglishProductName AS [Product Name], 
-ps.EnglishProductSubcategoryName AS [Sub Category], -- Joined in from Sub Category Table
-pc.EnglishProductCategoryName AS [Product Category], -- Joined in from Category Table
-p.Color AS [Product Color], p.Size AS [Product Size], p.ProductLine AS [Product Line], 
-[ModelName], [EnglishDescription],ISNULL (p.Status, 'Outdated') AS [Product Status] 
-FROM [AdventureWorksDW2019].[dbo].[DimProduct] p
-LEFT JOIN [dbo].[DimProductSubcategory] ps ON p.ProductSubcategoryKey = ps.ProductSubcategoryKey
-LEFT JOIN [dbo].[DimProductCategory] pc ON ps.ProductCategoryKey = pc.ProductCategoryKey
-ORDER BY p.ProductKey asc;
+DIM_PRODUCT
+<img width="632" alt="product dim" src="https://github.com/user-attachments/assets/a7303b0d-d6af-479e-9437-4d19685124a9" />
 
+FACT_SALES
+<img width="683" alt="Internetsales fact" src="https://github.com/user-attachments/assets/f65ea5c4-9eed-41ff-b8b6-5fc629f6bf0b" />
 
--- Cleansed Dim_Date Table 
-SELECT [DateKey], [FullDateAlternateKey] AS Date, [DayNumberOfWeek] ,[EnglishDayNameOfWeek] AS Day,[WeekNumberOfYear]
-,[EnglishMonthName] AS Month, LEFT([EnglishMonthName], 3) AS MonthShort, [MonthNumberOfYear] AS MonthNo, [CalendarQuarter] AS Quarter
-,[CalendarYear] AS Year FROM [AdventureWorksDW2019].[dbo].[DimDate] WHERE [CalendarYear] >= 2019;
-
--- Cleansed Dim_Customer Table
-SELECT c.CustomerKey AS [CustomerKey], c.FirstName AS [First Name], c.LastName AS [Last Name], 
-c.FirstName + ' ' + c.LastName AS [Full Name], CASE c.Gender WHEN 'M' THEN 'Male' WHEN 'F' THEN 'Female' END AS Gender, 
-c.DateFirstPurchase AS DateFirstPurchase, g.City AS [Customer City]          -- Joined in Customer City from Geography Table
-FROM [AdventureWorksDW2019].[dbo].[DimCustomer] AS c
-LEFT JOIN dbo.dimgeography AS g ON g.geographykey = c.geographykey 
-ORDER BY 
-  CustomerKey ASC -- Ordered List by CustomerKey;
 
 
 
