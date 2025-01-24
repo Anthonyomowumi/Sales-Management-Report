@@ -43,6 +43,15 @@ Below is a screenshot of the data model after cleansed and prepared tables were 
 <img width="784" alt="DATA MODEL FOR GITHUB PORTFOLIO PROJECT 1" src="https://github.com/user-attachments/assets/b2916834-594d-4afb-b224-fbdc9d2d1672" />
 
 
+## Sales Management Dashboard
+The finished sales management dashboard with one page with works as a dashboard and overview, with two other pages focused on combining tables for necessary details and 
+visualizations to show sales over time, per customers and per products.
+<img width="591" alt="SALES OVERVIEW DASHBOARD 1" src="https://github.com/user-attachments/assets/abf1f4e2-33de-4da5-b579-543563fe2b25" />
+
+<img width="587" alt="CUSTOMER OVERVIEW DASHBOARD" src="https://github.com/user-attachments/assets/a193275c-5a68-4ed6-9c4a-80f1954e7c76" />
+
+<img width="587" alt="PRODUCT OVERVIEW DASHBOARD 1" src="https://github.com/user-attachments/assets/5fc7845c-46c7-485b-8b1a-1e09d07ebc2b" />
+
 
 
 
