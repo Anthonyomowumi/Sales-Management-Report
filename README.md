@@ -1,4 +1,4 @@
-## Sales-Management-Report
+# Sales-Management-Report
 Data Analyst Portfolio Project – Sales Management Report
 
 
@@ -24,7 +24,7 @@ Data Warehouse is mostly used for Analytics, it is an OLAP system. The dataset c
 
 Below are the SQL statements for cleansing and transforming necessary data.
 
-# Cleansed FACT InternetSales Table 
+-- Cleansed FACT InternetSales Table 
 SELECT ProductKey, OrderDateKey, DueDateKey, ShipDateKey, CustomerKey, SalesOrderNumber,
 TotalProductCost, SalesAmount
 FROM [AdventureWorksDW2019].[dbo].[FactInternetSales]
@@ -34,7 +34,7 @@ ORDER BY
   OrderDateKey ASC;
 
 
-  # Cleansed Dim_Product Table
+  -- Cleansed Dim_Product Table
 SELECT p.ProductKey, p.ProductAlternateKey AS ProductItemCode, p.EnglishProductName AS [Product Name], 
 ps.EnglishProductSubcategoryName AS [Sub Category], -- Joined in from Sub Category Table
 pc.EnglishProductCategoryName AS [Product Category], -- Joined in from Category Table
@@ -46,12 +46,12 @@ LEFT JOIN [dbo].[DimProductCategory] pc ON ps.ProductCategoryKey = pc.ProductCat
 ORDER BY p.ProductKey asc;
 
 
-# Cleansed Dim_Date Table 
+-- Cleansed Dim_Date Table 
 SELECT [DateKey], [FullDateAlternateKey] AS Date, [DayNumberOfWeek] ,[EnglishDayNameOfWeek] AS Day,[WeekNumberOfYear]
 ,[EnglishMonthName] AS Month, LEFT([EnglishMonthName], 3) AS MonthShort, [MonthNumberOfYear] AS MonthNo, [CalendarQuarter] AS Quarter
 ,[CalendarYear] AS Year FROM [AdventureWorksDW2019].[dbo].[DimDate] WHERE [CalendarYear] >= 2019;
 
-# Cleansed Dim_Customer Table
+-- Cleansed Dim_Customer Table
 SELECT c.CustomerKey AS [CustomerKey], c.FirstName AS [First Name], c.LastName AS [Last Name], 
 c.FirstName + ' ' + c.LastName AS [Full Name], CASE c.Gender WHEN 'M' THEN 'Male' WHEN 'F' THEN 'Female' END AS Gender, 
 c.DateFirstPurchase AS DateFirstPurchase, g.City AS [Customer City]          -- Joined in Customer City from Geography Table
