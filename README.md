@@ -10,6 +10,7 @@ Data Analyst Portfolio Project – Sales Management Report
 
 <img width="475" alt="EXCEL SCREENSHOT FOR PORTFOLIO PROJECT 1" src="https://github.com/user-attachments/assets/d781f86c-c691-48eb-9116-96e94f398cb3" />
 
-
+## Business Request and User Stories
+An executive sales report for sales managers was the business request for this data analyst project. The following user stories were created in response to the business's requirement in order to complete delivery and guarantee that acceptance criteria were upheld throughout the project.
 
 
