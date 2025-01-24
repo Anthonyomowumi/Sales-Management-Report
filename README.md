@@ -14,4 +14,5 @@ Data Analyst Portfolio Project – Sales Management Report
 An executive sales report for sales managers was the business request for this data analyst project. The following user stories were created in response to the business's requirement in order to complete delivery and guarantee that acceptance criteria were upheld throughout the project.
 <img width="518" alt="userstory table format" src="https://github.com/user-attachments/assets/0a1f38d7-7e70-4be5-8b9b-a1eafe9e0b70" />
 
+## Data Cleansing & Transformation (SQL)
 
