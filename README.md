@@ -1,5 +1,5 @@
 # Sales-Management-Report
-Data Analyst Portfolio Project – Sales Management Report
+Data Analyst Portfolio Project – Sales Management Report using SQL and PowerBI
 
 
 <img width="591" alt="SALES OVERVIEW DASHBOARD 1" src="https://github.com/user-attachments/assets/5fb31a9d-6216-438c-85ac-18edd121c07c" />
