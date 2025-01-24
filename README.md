@@ -37,12 +37,10 @@ FACT_SALES
 <img width="683" alt="Internetsales fact" src="https://github.com/user-attachments/assets/f65ea5c4-9eed-41ff-b8b6-5fc629f6bf0b" />
 
 
+## Data Model
+Below is a screenshot of the data model after cleansed and prepared tables were read into Power BI.
 
-
-
-
-
-
+<img width="784" alt="DATA MODEL FOR GITHUB PORTFOLIO PROJECT 1" src="https://github.com/user-attachments/assets/b2916834-594d-4afb-b224-fbdc9d2d1672" />
 
 
 
